@@ -104,6 +104,9 @@
 }
 
 /* ---------- s3_painting_of_the_week --------- */
+#s3_painting_of_the_week img {
+  border-width: 3px !important;
+}
 
 /* ---------- s4_about --------- */
 .s4_about_grid {
@@ -208,79 +211,103 @@
   align-self: end;
 }
 
+@media (max-width: 768px) {
+  #s6_paintings aside {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'my-paintings-area'
+      'windmill';
+  }
+
+  .my-paintings-area {
+    grid-area: my-paintings-area;
+  }
+
+  .windmill {
+    grid-area: windmill;
+  }
+}
+
+@media (max-width: 576px) {
+  .windmill {
+    display: none;
+  }
+}
+
 .my-cursor {
   cursor: pointer;
   outline: none;
 }
 
 .painting-1 {
+  grid-area: one;
   background: url('img/paintings-img/1920px-P1150002_Cognacq-Jay_Rembrandt_anesse_de_Balaam_rwk.jpg');
   background-position: center;
   background-size: cover;
-  grid-area: one;
 }
 
 .painting-2 {
-  background: url('img/paintings-img/1920px-Rembrandt_-_Rembrandt_and_Saskia_in_the_Scene_of_the_Prodigal_Son_-_Google_Art_Project.jpg');
-  background-position: center;
-  background-size: cover;
   grid-area: two;
-}
-
-.painting-3 {
-  background: url('img/paintings-img/1920px-Rembrandt_van_Rijn_-_Portrait_of_Willem_Burchgraeff_-_O_854_-_Slovak_National_Gallery.jpg');
-  background-position: center;
-  background-size: cover;
-  grid-area: three;
-}
-
-.painting-4 {
-  background: url('img/paintings-img/1920px-Rembrandt_van_Rijn_198.jpg');
-  background-position: center;
-  background-size: cover;
-  grid-area: four;
-}
-
-.painting-5 {
-  background: url('img/paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Old_Man_with_a_Gold_Chain_-_Google_Art_Project.jpg');
-  background-position: center;
-  background-size: cover;
-  grid-area: five;
-}
-
-.painting-6 {
-  background: url('img/paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Zelfportret_op_jeugdige_leeftijd_-_Google_Art_Project.jpg');
-  background-position: center;
-  background-size: cover;
-  grid-area: six;
-}
-
-.painting-7 {
-  background: url('img/paintings-img/2880px-Rembrandt_The_Artist_in_his_studio.jpg');
-  background-position: center;
-  background-size: cover;
-  grid-area: seven;
-}
-
-.painting-8 {
   background: url('img/paintings-img/Rembrandt_-_Portrait_of_a_Woman_with_Gloves_-_NGI.808.jpg');
   background-position: center;
   background-size: cover;
-  grid-area: eight;
 }
 
-.painting-9 {
-  background: url('img/paintings-img/Rembrandt_van_Rijn_197.jpg');
+.painting-3 {
+  grid-area: three;
+  background: url('img/paintings-img/1920px-Rembrandt_van_Rijn_198.jpg');
   background-position: center;
   background-size: cover;
-  grid-area: nine;
 }
 
-.painting-10 {
+.painting-4 {
+  grid-area: four;
+  background: url('img/paintings-img/1920px-Rembrandt_van_Rijn_-_Portrait_of_Willem_Burchgraeff_-_O_854_-_Slovak_National_Gallery.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.painting-5 {
+  grid-area: five;
   background: url('img/paintings-img/Rembrandt-SMELL.jpg');
   background-position: center;
   background-size: cover;
+}
+
+.painting-6 {
+  grid-area: six;
+  background: url('img/paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Old_Man_with_a_Gold_Chain_-_Google_Art_Project.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.painting-7 {
+  grid-area: seven;
+  background: url('img/paintings-img/2880px-Rembrandt_The_Artist_in_his_studio.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.painting-8 {
+  grid-area: eight;
+  background: url('img/paintings-img/Rembrandt_van_Rijn_197.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.painting-9 {
+  grid-area: nine;
+  background: url('img/paintings-img/1920px-Rembrandt_-_Rembrandt_and_Saskia_in_the_Scene_of_the_Prodigal_Son_-_Google_Art_Project.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.painting-10 {
   grid-area: ten;
+  background: url('img/paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Zelfportret_op_jeugdige_leeftijd_-_Google_Art_Project.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 /* ---------- s7_drawings --------- */
@@ -422,6 +449,10 @@
   .footer_hours {
     text-align: center;
   }
+
+  .btn-toolbar {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -434,7 +465,9 @@
       'footer_painting_names footer_links';
   }
 
-  .footer_museum, .footer_links, .footer_museum h1 {
+  .footer_museum,
+  .footer_links,
+  .footer_museum h1 {
     flex: none;
     padding-top: 0;
     text-align: left;
